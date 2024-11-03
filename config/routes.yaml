@@ -1,12 +1,23 @@
 #home:
 #  path: /
-#  defaults: { _controller: 'AppBundle\Controller\DefaultController::indexAction' }
+#  defaults: { _controller: 'AppBundle\Controller\DefaultController::index' }
 #  methods:  GET
-#
+
 
 setupcheck:
     path: /api/setup-check
     controller: App\Controller\DefaultController::setupCheck
+
+exchange_rates_by_date:
+    path: /api/exchange-rates/{date}
+    controller: App\Controller\ExchangeRatesController::getExchangeRatesByDate
+    methods:  GET
+    requirements:
+        date: '\d{4}-\d{2}-\d{2}'
+
+home:
+    path: /
+    controller: App\Controller\DefaultController::index
 
 index:
     path: /{wildcard}

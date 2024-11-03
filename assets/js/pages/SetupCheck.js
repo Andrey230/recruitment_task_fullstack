@@ -24,7 +24,6 @@ class SetupCheck extends Component {
             let responseIsOK = response.data && response.data.testParam === 1
             this.setState({ setupCheck: responseIsOK, loading: false})
         }).catch(function (error) {
-            console.error(error);
             this.setState({ setupCheck: false, loading: false});
         });
     }
